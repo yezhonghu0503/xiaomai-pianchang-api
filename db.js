@@ -13,20 +13,69 @@
 const COLLECTION = 'prompt_sets';
 
 // ---- MOCK 数据（仅在 USE_MOCK_DB=1 时启用）---------------------------------
+// 注：category 为可选分类字段（运镜/场景/转场），用于首页分类 chips；旧数据可不带。
 const MOCK_SETS = [
   {
     id: 'a8Kd2x',
     title: '赛博朋克城市夜景运镜',
-    coverUrl: 'https://via.placeholder.com/750x420.png?text=COVER',
+    coverUrl: 'https://via.placeholder.com/750x420.png?text=赛博夜景',
     description: '用即梦/可灵生成的赛博城市夜景，含 3 个分镜',
+    category: '运镜',
     status: 'published',
-    viewCount: 0,
+    viewCount: 128,
     createdAt: 1751000000000,
     updatedAt: 1751000000000,
     prompts: [
       { order: 1, label: '分镜1·开场推镜', content: '霓虹灯城市夜景，雨后湿润街道反光，镜头缓慢向前推进，赛博朋克风格，电影感，4K', duration: '5秒' },
       { order: 2, label: '分镜2·环绕镜头', content: '围绕一座高楼环绕运镜，全息广告牌，蓝紫色调，体积光', duration: '3-5秒' },
       { order: 3, label: '分镜3·收尾拉远', content: '镜头快速拉远展示整座城市天际线，无人机视角，夜晚', duration: '4秒' }
+    ]
+  },
+  {
+    id: 'b3Lm7q',
+    title: '古风庭院唯美场景',
+    coverUrl: 'https://via.placeholder.com/750x420.png?text=古风庭院',
+    description: '水墨质感的古风庭院，适合开场氛围铺垫',
+    category: '场景',
+    status: 'published',
+    viewCount: 86,
+    createdAt: 1752200000000,
+    updatedAt: 1752200000000,
+    prompts: [
+      { order: 1, label: '分镜1·庭院全景', content: '中式古典庭院，青砖黛瓦，雕花木窗，庭中一株海棠，晨雾缭绕，国风水墨质感，柔光', duration: '4秒' },
+      { order: 2, label: '分镜2·细节特写', content: '特写海棠花瓣上的露珠滴落，浅景深，逆光，唯美氛围', duration: '3秒' }
+    ]
+  },
+  {
+    id: 'c9Rt2w',
+    title: '丝滑无缝转场合集',
+    coverUrl: 'https://via.placeholder.com/750x420.png?text=转场合集',
+    description: '4 组常用无缝转场提示词，剪辑必备',
+    category: '转场',
+    status: 'published',
+    viewCount: 203,
+    createdAt: 1753400000000,
+    updatedAt: 1753400000000,
+    prompts: [
+      { order: 1, label: '分镜1·甩镜转场', content: '镜头快速向左甩动产生运动模糊，画面切换到下一场景，动感转场', duration: '1秒' },
+      { order: 2, label: '分镜2·遮罩转场', content: '人物走过遮挡镜头，借遮挡物完成画面切换，无缝衔接', duration: '2秒' },
+      { order: 3, label: '分镜3·缩放转场', content: '镜头急速推近至物体表面，再拉出到新场景，缩放过渡', duration: '1-2秒' },
+      { order: 4, label: '分镜4·光效转场', content: '强光过曝充满画面后回落，切换到新场景，梦幻光效转场', duration: '1秒' }
+    ]
+  },
+  {
+    id: 'd5Yx8k',
+    title: '无人机航拍开场运镜',
+    coverUrl: 'https://via.placeholder.com/750x420.png?text=航拍运镜',
+    description: '大气磅礴的航拍开场，适合系列片头',
+    category: '运镜',
+    status: 'published',
+    viewCount: 57,
+    createdAt: 1754600000000,
+    updatedAt: 1754600000000,
+    prompts: [
+      { order: 1, label: '分镜1·穿云俯冲', content: '无人机视角穿过云层向下俯冲，露出壮阔山川，电影级航拍，宽幅，4K', duration: '5秒' },
+      { order: 2, label: '分镜2·贴地飞行', content: '镜头贴着水面/草地高速前进，两侧景物飞速掠过，速度感', duration: '4秒' }
     ]
   }
 ];
