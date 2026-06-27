@@ -22,7 +22,10 @@ const ADMIN_OPENIDS = (process.env.ADMIN_OPENIDS || '')
   .map((s) => s.trim())
   .filter(Boolean);
 
-// 健康检查
+// 抖音云平台健康检查（硬性要求）：必须实现 GET /v1/ping，返回 200 平台才认为服务可用。
+app.get('/v1/ping', (req, res) => res.status(200).send('pong'));
+
+// 自用健康检查
 app.get('/health', (req, res) => res.json({ ok: true }));
 
 // 统一入口
