@@ -87,4 +87,6 @@ function isAdmin(openid) {
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log('[xiaomai-api] listening on ' + port + ', admins=' + ADMIN_OPENIDS.length);
+  // 幂等播种（仅 SEED_ON_START=1 时执行）
+  db.seedIfNeeded().catch((e) => console.warn('[db] seed skipped:', String(e.message || e)));
 });
