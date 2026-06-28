@@ -53,7 +53,12 @@ app.post('/api', async (req, res) => {
       // ---------- 登录：换 openid + 判断是否管理员 ----------
       case 'login': {
         const openid = await openidFromCode(payload.code);
-        return res.json({ ok: true, data: { openid: openid, isAdmin: isAdmin(openid) } });
+        const admin = isAdmin(openid);
+        // 调试：用 JSON.stringify 暴露隐藏空格/字符差异
+        console.log('[login] openid=' + JSON.stringify(openid)
+          + ' isAdmin=' + admin
+          + ' whitelist=' + JSON.stringify(ADMIN_OPENIDS));
+        return res.json({ ok: true, data: { openid: openid, isAdmin: admin } });
       }
 
       // ---------- 管理写 ----------

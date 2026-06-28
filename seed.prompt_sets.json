@@ -1,0 +1,96 @@
+[
+  {
+    "id": "a8Kd2x",
+    "title": "赛博朋克城市夜景运镜",
+    "coverUrl": "https://via.placeholder.com/750x420.png?text=赛博夜景",
+    "description": "用即梦/可灵生成的赛博城市夜景，含 3 个分镜",
+    "category": "运镜",
+    "status": "published",
+    "viewCount": 128,
+    "createdAt": 1751000000000,
+    "updatedAt": 1751000000000,
+    "prompts": [
+      { "order": 1, "label": "分镜1·开场推镜", "content": "霓虹灯城市夜景，雨后湿润街道反光，镜头缓慢向前推进，赛博朋克风格，电影感，4K", "duration": "5秒" },
+      { "order": 2, "label": "分镜2·环绕镜头", "content": "围绕一座高楼环绕运镜，全息广告牌，蓝紫色调，体积光", "duration": "3-5秒" },
+      { "order": 3, "label": "分镜3·收尾拉远", "content": "镜头快速拉远展示整座城市天际线，无人机视角，夜晚", "duration": "4秒" }
+    ]
+  },
+  {
+    "id": "b3Lm7q",
+    "title": "古风庭院唯美场景",
+    "coverUrl": "https://via.placeholder.com/750x420.png?text=古风庭院",
+    "description": "水墨质感的古风庭院，适合开场氛围铺垫",
+    "category": "场景",
+    "status": "published",
+    "viewCount": 86,
+    "createdAt": 1752200000000,
+    "updatedAt": 1752200000000,
+    "prompts": [
+      { "order": 1, "label": "分镜1·庭院全景", "content": "中式古典庭院，青砖黛瓦，雕花木窗，庭中一株海棠，晨雾缭绕，国风水墨质感，柔光", "duration": "4秒" },
+      { "order": 2, "label": "分镜2·细节特写", "content": "特写海棠花瓣上的露珠滴落，浅景深，逆光，唯美氛围", "duration": "3秒" }
+    ]
+  },
+  {
+    "id": "c9Rt2w",
+    "title": "丝滑无缝转场合集",
+    "coverUrl": "https://via.placeholder.com/750x420.png?text=转场合集",
+    "description": "4 组常用无缝转场提示词，剪辑必备",
+    "category": "转场",
+    "status": "published",
+    "viewCount": 203,
+    "createdAt": 1753400000000,
+    "updatedAt": 1753400000000,
+    "prompts": [
+      { "order": 1, "label": "分镜1·甩镜转场", "content": "镜头快速向左甩动产生运动模糊，画面切换到下一场景，动感转场", "duration": "1秒" },
+      { "order": 2, "label": "分镜2·遮罩转场", "content": "人物走过遮挡镜头，借遮挡物完成画面切换，无缝衔接", "duration": "2秒" },
+      { "order": 3, "label": "分镜3·缩放转场", "content": "镜头急速推近至物体表面，再拉出到新场景，缩放过渡", "duration": "1-2秒" },
+      { "order": 4, "label": "分镜4·光效转场", "content": "强光过曝充满画面后回落，切换到新场景，梦幻光效转场", "duration": "1秒" }
+    ]
+  },
+  {
+    "id": "d5Yx8k",
+    "title": "无人机航拍开场运镜",
+    "coverUrl": "https://via.placeholder.com/750x420.png?text=航拍运镜",
+    "description": "大气磅礴的航拍开场，适合系列片头",
+    "category": "运镜",
+    "status": "published",
+    "viewCount": 57,
+    "createdAt": 1754600000000,
+    "updatedAt": 1754600000000,
+    "prompts": [
+      { "order": 1, "label": "分镜1·穿云俯冲", "content": "无人机视角穿过云层向下俯冲，露出壮阔山川，电影级航拍，宽幅，4K", "duration": "5秒" },
+      { "order": 2, "label": "分镜2·贴地飞行", "content": "镜头贴着水面/草地高速前进，两侧景物飞速掠过，速度感", "duration": "4秒" }
+    ]
+  },
+  {
+    "id": "e7Zp4n",
+    "title": "赛博女主角色设定",
+    "coverUrl": "https://via.placeholder.com/750x420.png?text=角色设定",
+    "description": "一致性角色设计提示词，多角度还原同一人物",
+    "category": "角色设计",
+    "status": "published",
+    "viewCount": 142,
+    "createdAt": 1755800000000,
+    "updatedAt": 1755800000000,
+    "prompts": [
+      { "order": 1, "label": "分镜1·正面定妆", "content": "20 岁亚洲女性，银色短发，蓝色机械义眼，黑色科技感外套，正面半身，影棚布光，超写实，8K", "duration": "—" },
+      { "order": 2, "label": "分镜2·侧面三视图", "content": "同一角色，左侧 45 度、正侧、背面三视图，统一发型与服装，角色设定图，参考表", "duration": "—" },
+      { "order": 3, "label": "分镜3·表情集", "content": "同一角色，喜怒哀乐四种表情，统一画风，表情参考板", "duration": "—" }
+    ]
+  },
+  {
+    "id": "f2Wb9s",
+    "title": "国风少年角色三视图",
+    "coverUrl": "https://via.placeholder.com/750x420.png?text=国风少年",
+    "description": "古风少年角色一致性设定，适合系列短剧",
+    "category": "角色设计",
+    "status": "published",
+    "viewCount": 73,
+    "createdAt": 1756900000000,
+    "updatedAt": 1756900000000,
+    "prompts": [
+      { "order": 1, "label": "分镜1·人物立绘", "content": "古风少年，束发长袍，剑眉星目，手持折扇，全身立绘，国风工笔，干净背景", "duration": "—" },
+      { "order": 2, "label": "分镜2·服装细节", "content": "同一角色服装细节特写：刺绣纹样、腰带、配饰，保持配色一致", "duration": "—" }
+    ]
+  }
+]
