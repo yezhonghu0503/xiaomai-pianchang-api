@@ -53,12 +53,7 @@ app.post('/api', async (req, res) => {
       // ---------- 登录：换 openid + 判断是否管理员 ----------
       case 'login': {
         const openid = await openidFromCode(payload.code);
-        const admin = isAdmin(openid);
-        // 调试：用 JSON.stringify 暴露隐藏空格/字符差异
-        console.log('[login] openid=' + JSON.stringify(openid)
-          + ' isAdmin=' + admin
-          + ' whitelist=' + JSON.stringify(ADMIN_OPENIDS));
-        return res.json({ ok: true, data: { openid: openid, isAdmin: admin } });
+        return res.json({ ok: true, data: { openid: openid, isAdmin: isAdmin(openid) } });
       }
 
       // ---------- 管理写 ----------
@@ -102,7 +97,10 @@ function normalizePrompts(prompts) {
     order: i + 1,
     label: p.label || '',
     content: String(p.content || ''),
-    duration: String(p.duration || '')
+    duration: String(p.duration || ''),
+    model: p.model ? String(p.model) : '',
+    lora: p.lora ? String(p.lora) : '',
+    refImage: p.refImage ? String(p.refImage) : ''
   }));
 }
 
@@ -185,5 +183,7 @@ function isAdmin(openid) {
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log('[xiaomai-api] listening on ' + port + ', admins=' + ADMIN_OPENIDS.length);
+  // 一次性清理种子数据（仅 CLEAN_SEED=1 时执行），删完把 CLEAN_SEED 改回 0
+  db.cleanSeedIfNeeded().catch((e) => console.warn('[db] cleanSeed skipped:', String(e.message || e)));
   db.seedIfNeeded().catch((e) => console.warn('[db] seed skipped:', String(e.message || e)));
 });
