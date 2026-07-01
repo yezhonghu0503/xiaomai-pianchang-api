@@ -18,7 +18,7 @@ function getClient() {
   if (_clientPromise) return _clientPromise;
   const uri = process.env.MONGODB_URI;
   if (!uri) return Promise.reject(new Error('缺少环境变量 MONGODB_URI'));
-  const client = new MongoClient(uri, { maxPoolSize: 5, serverSelectionTimeoutMS: 8000 });
+  const client = new MongoClient(uri, { maxPoolSize: 5, serverSelectionTimeoutMS: 15000 });
   _clientPromise = client.connect();
   return _clientPromise;
 }
@@ -92,6 +92,16 @@ async function remove(id) {
 async function listAll() {
   const c = await coll();
   return c.find({}, NO_ID).sort({ createdAt: -1 }).toArray();
+}
+
+// 一次性清理种子数据（CLEAN_SEED=1 时启动调用）：仅删除内置示例的那几个 id，
+// 不会影响你新建的真实作品。删完记得把 CLEAN_SEED 改回 0。
+async function cleanSeedIfNeeded() {
+  if (process.env.CLEAN_SEED !== '1') return;
+  const c = await coll();
+  const ids = MOCK_SETS.map((s) => s.id);
+  const r = await c.deleteMany({ id: { $in: ids } });
+  console.log('[db] cleanSeed removed ' + ((r && r.deletedCount) || 0) + ' docs: ' + ids.join(','));
 }
 
 // 幂等播种（SEED_ON_START=1 时启动调用）：建唯一索引 + 仅在缺失时插入示例。
@@ -189,5 +199,6 @@ module.exports = {
   update,
   remove,
   listAll,
-  seedIfNeeded
+  seedIfNeeded,
+  cleanSeedIfNeeded
 };

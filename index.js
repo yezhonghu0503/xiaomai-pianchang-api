@@ -183,7 +183,5 @@ function isAdmin(openid) {
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log('[xiaomai-api] listening on ' + port + ', admins=' + ADMIN_OPENIDS.length);
-  // 一次性清理种子数据（仅 CLEAN_SEED=1 时执行），删完把 CLEAN_SEED 改回 0
-  db.cleanSeedIfNeeded().catch((e) => console.warn('[db] cleanSeed skipped:', String(e.message || e)));
   db.seedIfNeeded().catch((e) => console.warn('[db] seed skipped:', String(e.message || e)));
 });
